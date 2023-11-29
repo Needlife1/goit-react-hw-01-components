@@ -1,4 +1,3 @@
-import { Transaction } from './Transaction';
 import { TransactionsHistoryStyled } from './TransactionsHistoryStyled';
 
 export const TransactionsHistory = ({ transactions }) => {
@@ -13,15 +12,13 @@ export const TransactionsHistory = ({ transactions }) => {
       </thead>
 
       <tbody>
-        {transactions.map((el, i) => {
+        {transactions.map(el => {
           return (
-            <Transaction
-              key={el.id}
-              id={el.id}
-              type={el.type}
-              amount={el.amount}
-              currency={el.currency}
-            />
+            <tr key={el.id} id={el.id}>
+              <td>{el.type}</td>
+              <td>{el.amount}</td>
+              <td>{el.currency}</td>
+            </tr>
           );
         })}
       </tbody>
